@@ -1,0 +1,81 @@
+Employee Payroll Service 
+UC1- Create Database of Payroll Service
+commands:
+	1. CREATE DATABASE payroll service;
+	2.USE payroll_service;
+	3.Show DATABASES;
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| assignment_jpa           |
+| bank_management_system   |
+| club_mgm_sys             |
+| employee_hibernate_jpa   |
+| hibernate_jpa            |
+| information_schema       |
+| javabatch                |
+| library_m_system         |
+| many_to_many_bi          |
+| many_to_many_uni         |
+| many_to_one_uni          |
+| mysql                    |
+| one_to_many_bi           |
+| one_to_many_uni          |
+| one_to_many_uni_hospital |
+| one_to_one_bi            |
+| one_to_one_uni           |
+| online_lec_mod           |
+| performance_schema       |
+| product_jdbc             |
+| school_jdbc              |
+| servlet_emp_crud         |
+| servlet_mvc_crud         |
+| spring_boot_crud         |
+| spring_mvc_club_project  |
+| spring_mvc_crud          |
+| sys                      |
++--------------------------+
+27 rows in set (0.00 sec)
+
+mysql> create database payroll_service;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| assignment_jpa           |
+| bank_management_system   |
+| club_mgm_sys             |
+| employee_hibernate_jpa   |
+| hibernate_jpa            |
+| information_schema       |
+| javabatch                |
+| library_m_system         |
+| many_to_many_bi          |
+| many_to_many_uni         |
+| many_to_one_uni          |
+| mysql                    |
+| one_to_many_bi           |
+| one_to_many_uni          |
+| one_to_many_uni_hospital |
+| one_to_one_bi            |
+| one_to_one_uni           |
+| online_lec_mod           |
+| payroll_service          |
+| performance_schema       |
+| product_jdbc             |
+| school_jdbc              |
+| servlet_emp_crud         |
+| servlet_mvc_crud         |
+| spring_boot_crud         |
+| spring_mvc_club_project  |
+| spring_mvc_crud          |
+| sys                      |
++--------------------------+
+28 rows in set (0.00 sec)
+
+
+
