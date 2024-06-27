@@ -109,3 +109,14 @@ mysql> DESCRIBE employee_payroll;
 +--------+--------------+------+-----+---------+----------------+
 4 rows in set (0.11 sec)
 
+
+------------------------------------------------------------
+UC3- CREATE TABLE PAYROLL_SERVICE AND INSERT sDATA:-
+------------------------------------------------------------
+mysql> INSERT INTO employee_payroll (name,salary,start) VALUES
+    -> ("Shardul", 2000, '2024-12-05'),
+    -> ("Jb", 3000, '2024-11-03'),
+    -> ("Hrutu", 20000, '2023-09-02');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
