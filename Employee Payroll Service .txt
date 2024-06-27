@@ -1,8 +1,8 @@
 Employee Payroll Service :-----
 
-----------------------------------------------------------------------------------
+------------------------------------------------------
 UC1- Create Database of Payroll Service
----------------------------------------------------------------------------------
+------------------------------------------------------
 commands:
 	1. CREATE DATABASE payroll service;
 	2.USE payroll_service;
@@ -120,3 +120,17 @@ mysql> INSERT INTO employee_payroll (name,salary,start) VALUES
 Query OK, 3 rows affected (0.01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
+
+------------------------------------------------------------
+UC4- RETRIVE THE DATA FROM THE EMPLOYEE PAYROLL TABLE:-
+------------------------------------------------------------
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+------------+
+| id | name    | salary | start      |
++----+---------+--------+------------+
+|  5 | Shardul |   2000 | 2024-12-05 |
+|  6 | Jb      |   3000 | 2024-11-03 |
+|  7 | Hrutu   |  20000 | 2023-09-02 |
++----+---------+--------+------------+
+3 rows in set (0.01 sec)
