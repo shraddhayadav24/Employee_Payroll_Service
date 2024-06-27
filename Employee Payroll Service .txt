@@ -302,6 +302,32 @@ mysql> SELECT * FROM employee_payroll;
 +----+---------+--------+------------+--------+-------+---------+------------+
 6 rows in set (0.00 sec)
 
+---------------------------------------------------------------------------------------------------------------------
+UC8- Ability to extend employee payroll data to store employee information like basic pay, deductions, taxable pay, :-
+---------------------------------------------------------------------------------------------------------------------
+mysql> ALTER TABLE employee_payroll
+    -> ADD COLUMN Basic_Pay INT,
+    -> ADD COLUMN Deduction INT,
+    -> ADD COLUMN Taxable_Pay INT,
+    -> ADD COLUMN Income_Tax INT,
+    -> ADD COLUMN Net_Pay INT;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name    | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  5 | Shardul |   2000 | 2024-12-05 | M      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
+|  6 | Jb      |   3000 | 2024-11-03 | M      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
+|  7 | Hrutu   |  20000 | 2023-09-02 | F      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
+|  8 | Shivani |  12000 | 2024-09-12 | F      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
+|  9 | Rohit   |  10000 | 2023-09-24 | M      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
+| 10 | Amruta  |   5000 | 2024-07-23 | F      | NULL  | Mumbai  |            |      NULL |      NULL |        NULL |       NULL |    NULL |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+6 rows in set (0.00 sec)
+
+
 
 
 
