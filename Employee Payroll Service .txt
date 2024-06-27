@@ -156,5 +156,30 @@ mysql>  SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2023-09-02' AS 
 +----+-------+--------+------------+
 1 row in set (0.01 sec)
 
+----------------------------------------------------------------------------------------
+UC6- UPDATE THE DATABASE ADD GENDER COLUMN AND RETRIVE THE ALL DATA:-
+-----------------------------------------------------------------------------------------
+
+mysql> ALTER TABLE employee_payroll
+    -> ADD gender VARCHAR(10);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql>  UPDATE employee_payroll set gender = 'M' WHERE name = 'Shardul' or  name = 'Jb';
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> UPDATE employee_payroll set gender = 'F' WHERE name = 'Hrutu';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+------------+--------+
+| id | name    | salary | start      | gender |
++----+---------+--------+------------+--------+
+|  5 | Shardul |   2000 | 2024-12-05 | M      |
+|  6 | Jb      |   3000 | 2024-11-03 | M      |
+|  7 | Hrutu   |  20000 | 2023-09-02 | F      |
++----+---------+--------+------------+--------+
+3 rows in set (0.00 sec)
+
 
 
