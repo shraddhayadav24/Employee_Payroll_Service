@@ -328,6 +328,71 @@ mysql> SELECT * FROM employee_payroll;
 6 rows in set (0.00 sec)
 
 
+---------------------------------------------------------------------------------------------------------------------
+UC10- Ability to make Terissa as part of Sales and Marketing Department :-
+---------------------------------------------------------------------------------------------------------------------
+mysql> UPDATE employee_payroll SET department="IT", Basic_pay=6000,Deduction=500,Taxable_Pay=1000,Income_Tax=2000,Net_Pay=5000 WHERE name="Shardul";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll WHERE name="Shardul";
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name    | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  5 | Shardul |   2000 | 2024-12-05 | M      | NULL  | Mumbai  | IT         |      6000 |       500 |        1000 |       2000 |    5000 |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE employee_payroll SET department="IT", Basic_pay=8000,Deduction=500,Taxable_Pay=1000,Income_Tax=2500,Net_Pay=5000 WHERE name="Jb";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll WHERE name="Jb";
++----+------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  6 | Jb   |   3000 | 2024-11-03 | M      | NULL  | Mumbai  | IT         |      8000 |       500 |        1000 |       2500 |    5000 |
++----+------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE employee_payroll SET department="Sales", Basic_pay=8000,Deduction=700,Taxable_Pay=1500,Income_Tax=2500,Net_Pay=6000 WHERE name="Hrutu";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll WHERE name="Hrutu";
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name  | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  7 | Hrutu |  20000 | 2023-09-02 | F      | NULL  | Mumbai  | Sales      |      8000 |       700 |        1500 |       2500 |    6000 |
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE employee_payroll SET department="Sales", Basic_pay=9000,Deduction=700,Taxable_Pay=1500,Income_Tax=2500,Net_Pay=6000 WHERE name="Rohit";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll WHERE name ="Rohit";
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name  | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  9 | Rohit |  10000 | 2023-09-24 | M      | NULL  | Mumbai  | Sales      |      9000 |       700 |        1500 |       2500 |    6000 |
++----+-------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+| id | name    | salary | start      | gender | phone | address | department | Basic_Pay | Deduction | Taxable_Pay | Income_Tax | Net_Pay |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+|  5 | Shardul |   2000 | 2024-12-05 | M      | NULL  | Mumbai  | IT         |      6000 |       500 |        1000 |       2000 |    5000 |
+|  6 | Jb      |   3000 | 2024-11-03 | M      | NULL  | Mumbai  | IT         |      8000 |       500 |        1000 |       2500 |    5000 |
+|  7 | Hrutu   |  20000 | 2023-09-02 | F      | NULL  | Mumbai  | Sales      |      8000 |       700 |        1500 |       2500 |    6000 |
+|  8 | Shivani |  12000 | 2024-09-12 | F      | NULL  | Mumbai  | IT         |      5000 |       250 |         250 |        500 |     600 |
+|  9 | Rohit   |  10000 | 2023-09-24 | M      | NULL  | Mumbai  | Sales      |      9000 |       700 |        1500 |       2500 |    6000 |
+| 10 | Amruta  |   5000 | 2024-07-23 | F      | NULL  | Mumbai  | IT         |      5000 |       250 |         250 |        500 |     600 |
++----+---------+--------+------------+--------+-------+---------+------------+-----------+-----------+-------------+------------+---------+
+6 rows in set (0.00 sec)
+
+
 
 
 
