@@ -278,6 +278,30 @@ mysql> SELECT COUNT(salary) FROM employee_payroll WHERE gender = 'F' GROUP BY ge
 +---------------+
 1 row in set (0.00 sec)
 
+---------------------------------------------------------------------------------------------------------------------
+UC8- Ability to extend employee payroll data to store employee information like employee phone, address, department:-
+---------------------------------------------------------------------------------------------------------------------
+
+mysql> ALTER TABLE employee_payroll
+    -> ADD COLUMN phone VARCHAR(20),
+    -> ADD COLUMN address VARCHAR(150) DEFAULT 'Mumbai',
+    -> ADD COLUMN department VARCHAR(150) NOT NULL;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll;
++----+---------+--------+------------+--------+-------+---------+------------+
+| id | name    | salary | start      | gender | phone | address | department |
++----+---------+--------+------------+--------+-------+---------+------------+
+|  5 | Shardul |   2000 | 2024-12-05 | M      | NULL  | Mumbai  |            |
+|  6 | Jb      |   3000 | 2024-11-03 | M      | NULL  | Mumbai  |            |
+|  7 | Hrutu   |  20000 | 2023-09-02 | F      | NULL  | Mumbai  |            |
+|  8 | Shivani |  12000 | 2024-09-12 | F      | NULL  | Mumbai  |            |
+|  9 | Rohit   |  10000 | 2023-09-24 | M      | NULL  | Mumbai  |            |
+| 10 | Amruta  |   5000 | 2024-07-23 | F      | NULL  | Mumbai  |            |
++----+---------+--------+------------+--------+-------+---------+------------+
+6 rows in set (0.00 sec)
+
 
 
 
