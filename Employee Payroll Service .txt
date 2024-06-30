@@ -393,6 +393,84 @@ mysql> SELECT * FROM employee_payroll;
 6 rows in set (0.00 sec)
 
 
+------------------------------------------------------------------------------------------------------
+UC11- ADD EMPLOYEE AND DEPARTMENT TABLE:-
+------------------------------------------------------------------------------------------------------
+mysql> use payroll_service;
+Database changed
+mysql> CREATE TABLE dept_payroll (
+    -> dept_id INT NOT NULL,
+    -> PRIMARY KEY(dept_id));
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> INSERT INTO dept_payroll (dept_id) VALUES (10),(20),(30),(40);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE dept_payroll
+    -> ADD COLUMN dept_name VARCHAR(150);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE dept_payroll SET dept_name = 'IT' WHERE dept_id = 10;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE dept_payroll SET dept_name = 'CSE' WHERE dept_id = 20;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE dept_payroll SET dept_name = 'ML' WHERE dept_id = 30;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE dept_payroll SET dept_name = 'AI' WHERE dept_id = 40;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM dept_payroll;
++---------+-----------+
+| dept_id | dept_name |
++---------+-----------+
+|      10 | IT        |
+|      20 | CSE       |
+|      30 | ML        |
+|      40 | AI        |
++---------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE Emp_Dept (
+    ->     Emp_id INT,
+    ->     Dept_id INT,
+    ->     PRIMARY KEY (Emp_id, Dept_id),
+    ->     FOREIGN KEY (Emp_id) REFERENCES employee_payroll(id),
+    ->     FOREIGN KEY (Dept_id) REFERENCES dept_payroll(dept_id)
+    -> );
+Query OK, 0 rows affected (0.10 sec)
+mysql> INSERT INTO Emp_Dept (Emp_id, Dept_id) VALUES
+    ->     (5, 10),
+    ->     (6, 20),
+    ->     (7, 30),
+    ->     (8, 40),
+    ->     (9, 20),
+    ->     (10, 10);
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Emp_Dept;
++--------+---------+
+| Emp_id | Dept_id |
++--------+---------+
+|      5 |      10 |
+|     10 |      10 |
+|      6 |      20 |
+|      9 |      20 |
+|      7 |      30 |
+|      8 |      40 |
++--------+---------+
+6 rows in set (0.00 sec)
+
+
 
 
 
